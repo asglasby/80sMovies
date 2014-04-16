@@ -1,0 +1,15 @@
+﻿<h1>Home</h1>
+<input type="text" ng-model="query" ng-init="query=''" /><br />
+Search By<div>
+    Title:<input type="checkbox" ng-model="SearchBy.title" />
+    Director:<input type="checkbox" ng-model="SearchBy.director" />
+    Year:<input type="checkbox" ng-model="SearchBy.year" />
+</div>
+{{SearchBy}}
+<div class="jumbotron" ng-repeat="movie in Movies | filter: search">
+    <h1>{{movie.title}}</h1>
+    <h2>{{movie.year}}-{{movie.director}}</h2>
+    <a href="#/editMovie/{{$index}}" class="btn btn-warning fa fa-edit">
+
+    </a>
+</div>
